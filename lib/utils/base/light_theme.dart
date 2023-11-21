@@ -9,10 +9,13 @@ ThemeData get lightMode => ThemeData.light().copyWith(
         color: lightIconColor,
       ),
       textTheme: TextTheme(
-          displayMedium: TextStyle(
-              color: Colors.black,
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w500)),
+        displayMedium: TextStyle(
+          color: Colors.black,
+          fontSize: 18.sp,
+          fontFamily: "Cairo",
+          fontWeight: FontWeight.w500,
+        ),
+      ),
       hoverColor: lightScaffold,
       bottomNavigationBarTheme:
           BottomNavigationBarThemeData(backgroundColor: Colors.blue[100]),
@@ -44,7 +47,6 @@ ThemeData get lightMode => ThemeData.light().copyWith(
         backgroundColor: lightAppBar,
       ),
       inputDecorationTheme: const InputDecorationTheme(
-        
         fillColor: lightChatBox,
         iconColor: lightText,
         isCollapsed: true,

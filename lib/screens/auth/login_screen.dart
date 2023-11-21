@@ -38,10 +38,11 @@ class LoginScreen extends ConsumerWidget {
             ),
             CustomTextField(
               controller: _emailController,
-              hint: 'Email Address',
+              hintText: 'Email Address',
             ),
             15.verticalSpace,
-            CustomTextField(controller: _passwordController, hint: 'Password'),
+            CustomTextField(
+                controller: _passwordController, hintText: 'Password'),
             30.verticalSpace,
             CustomButton(onTap: () => _login(ref, context), text: 'Login'),
             InkWell(

@@ -10,10 +10,10 @@ class SmallText extends StatelessWidget {
   const SmallText({
     super.key,
     required this.text,
-     this.fontSize = 14,
-     this.color,
-     this.fontWeight = FontWeight.w500,
-     this.textAlign,
+    this.fontSize = 14,
+    this.color,
+    this.fontWeight = FontWeight.w500,
+    this.textAlign,
   });
 
   @override
@@ -21,7 +21,7 @@ class SmallText extends StatelessWidget {
     return Text(
       text,
       style: context.theme.textTheme.displayMedium!.copyWith(
-        color: context.theme.textTheme.displayMedium!.color,
+        color: color ?? context.theme.textTheme.displayMedium!.color,
         fontWeight: fontWeight,
         fontSize: fontSize,
       ),
