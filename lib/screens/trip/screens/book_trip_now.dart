@@ -1,23 +1,39 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:faenonibeqwa/repositories/payment_repo.dart';
+import 'package:faenonibeqwa/screens/payment/visa_card_view.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:faenonibeqwa/controllers/payment_controller.dart';
+import 'package:faenonibeqwa/models/trip_model.dart';
 import 'package:faenonibeqwa/utils/shared/widgets/big_text.dart';
 import 'package:faenonibeqwa/utils/shared/widgets/custom_button.dart';
 import 'package:faenonibeqwa/utils/shared/widgets/meeting_title_text_field.dart';
-import 'package:faenonibeqwa/utils/shared/widgets/small_text.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class BookTripNow extends StatefulWidget {
-  const BookTripNow({super.key});
+class BookTripNow extends ConsumerStatefulWidget {
+  final num price;
+  const BookTripNow({
+    required this.price,
+  });
 
   @override
-  State<BookTripNow> createState() => _BookTripNowState();
+  ConsumerState<BookTripNow> createState() => _BookTripNowState();
 }
 
-class _BookTripNowState extends State<BookTripNow> {
+class _BookTripNowState extends ConsumerState<BookTripNow> {
   final nameController = TextEditingController();
   final phoneController = TextEditingController();
   final numberOfPeopleController = TextEditingController();
   final formKey = GlobalKey<FormState>();
+
+  @override
+  void initState() {
+    ref.read(paymentController).getPaymentAuth();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +95,15 @@ class _BookTripNowState extends State<BookTripNow> {
               CustomButton(
                 onTap: () {
                   if (formKey.currentState!.validate()) {
-                    print('Validator Done');
+                    ref
+                        .read(paymentController)
+                        .getOrderId(price: widget.price.toString())
+                        .then((value) {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return VisaCardView(finalToken: ref.read(finalToken));
+                      }));
+                    });
                   }
                 },
                 text: 'تابع لأتمام عملية الحجز',

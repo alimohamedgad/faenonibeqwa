@@ -31,6 +31,7 @@ dependencies:
   cached_network_image: ^3.3.0
   cloud_firestore: ^4.13.0
   cupertino_icons: ^1.0.2
+  dio: ^5.3.4
   equatable: ^2.0.5
   firebase_auth: ^4.13.0
   firebase_core: ^2.22.0
@@ -46,6 +47,7 @@ dependencies:
   permission_handler: null
   timeago: ^3.6.0
   uuid: null
+  webview_flutter: ^4.4.2
   zego_uikit_prebuilt_call: ^3.6.1
   zego_uikit_prebuilt_video_conference: any
   zego_uikit_signaling_plugin: null

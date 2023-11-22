@@ -72,7 +72,9 @@ class TripDetailsScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return const BookTripNow();
+                                return BookTripNow(
+                                  price: tripModel.price,
+                                );
                               },
                             ),
                           );

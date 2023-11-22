@@ -14,7 +14,6 @@ import 'package:uuid/uuid.dart';
 
 import '../controllers/auth_controller.dart';
 import '../utils/base/constants.dart';
-import '../utils/shared/data/api_client.dart';
 import '../utils/shared/widgets/snackbar.dart';
 
 class MeetingRepo extends ChangeNotifier {
