@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:faenonibeqwa/controllers/auth_controller.dart';
 import 'package:faenonibeqwa/screens/auth/signup_screen.dart';
 import 'package:faenonibeqwa/screens/home/main_sceen.dart';

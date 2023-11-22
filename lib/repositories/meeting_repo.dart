@@ -1,6 +1,6 @@
 // ignore_for_file: deprecated_member_use, unused_import
 
-import 'dart:math';
+import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:faenonibeqwa/models/meeting_model.dart';
@@ -55,7 +55,7 @@ class MeetingRepo extends ChangeNotifier {
         print('fill all fields');
       }
     } catch (e) {
-      print('error $e');
+      log('error $e');
     }
   }
 }

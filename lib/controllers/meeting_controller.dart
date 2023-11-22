@@ -1,8 +1,4 @@
-import 'dart:typed_data';
-
-import 'package:faenonibeqwa/controllers/auth_controller.dart';
 import 'package:faenonibeqwa/repositories/meeting_repo.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final meetingControllerProvider = Provider((ref) {
